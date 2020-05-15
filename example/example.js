@@ -1,23 +1,21 @@
+const ocrSpaceApi = require('../lib/ocrSpaceApi')
 
-const ocrSpaceApi = require('./../lib/ocrSpaceApi');
+const options =  { 
+  apikey  : '<YOUR API KEY HERE>',
+  filetype: 'jpg',
+  verbose : false
+}
 
-var options =  { 
-    apikey: '<your_api_key_here>',
-    language: 'por',
-    imageFormat: 'image/png',
-    isOverlayRequired: true
-  };
+const imageFilePath = `${__dirname}/loveText.jpg`
 
-const imageFilePath = __dirname + "\\lovetext.jpg";
+const getText = async () => {
+  try {
+    let result = await ocrSpaceApi(imageFilePath, options)
+    
+    console.log({ result })
+  } catch (error) {
+    console.error(error)
+  }
+}
 
-ocrSpaceApi.parseImageFromLocalFile(imageFilePath, options)
-  .then(function (parsedResult) {
-    console.log('---------- parsedText: \n', 
-      parsedResult.parsedText,
-      '\n -------- ocrParsedResult: \n', 
-      parsedResult.ocrParsedResult);
-  }).catch(function (err, body) {
-    console.log('ERROR:', err, body);
-  });
-
-
+getText()

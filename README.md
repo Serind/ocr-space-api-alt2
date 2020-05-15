@@ -1,62 +1,89 @@
-# ocr-space-api
-Allow to access ORC.SPACE api to send images and get the result
+# ocr-space-api2
 
-More Details: https://ocr.space/ocrapi
+Allow to access [ORC.SPACE API](https://ocr.space/ocrapi) to send images and get the embedded text.
 
-**IMPORTANT** The OCR is provided by ocr space.  I don't have anything with them, I just want to help sharing this library.
+More Details: https://ocr.space/ocrapi.
 
-## Instalation
+**IMPORTANT**:
+
+The OCR is provided by [OCR.SPACE](https://ocr.space/). I don't have anything with them, I just want to help reworking and sharing this library.
+
+## Main changes
+
+1. The original library was using [request](https://github.com/request/request#readme), but since it is deprecated, I show the necessity to migrate. Now I'm currently using [axios](https://github.com/axios/axios#readme) to perform the request.
+
+2. Since [axios](https://github.com/axios/axios#readme) doesn't support `form data` request, I've used [query-string](https://github.com/sindresorhus/query-string#readme).
+
+## Installation
 
 ### First - Register and Get your API key
 
-Get you API key at https://ocr.space/ocrapi ( Direct link : http://eepurl.com/bOLOcf  ). Just, follow their steps.
+Get you API key at https://ocr.space/ocrapi (Direct link : http://eepurl.com/bOLOcf). Just, follow their steps.
 
 ### Second - Install npm package
 
-```console
-  npm install ocr-space-api --save
-```
+**Pending to publish in [`npm`](https://www.npmjs.com/)**.
+<!-- ```console
+  npm i ocr-space-api2
+``` -->
+
+<!-- ```console
+  yarn add ocr-space-api2
+``` -->
 
 ## Usage example
 
-You can see and example at the folder `example`
+You can see and example at the folder [`example`](/example/example.js).
 
 ```javascript
-const ocrSpaceApi = require('ocr-space-api');
+const ocrSpaceApi2 = require('ocr-space-api2')
 
 var options =  { 
-    apikey: '<your_api_key_here>',
-    language: 'por', // Português
-    imageFormat: 'image/png', // Image Type (Only png ou gif is acceptable at the moment i wrote this)
-    isOverlayRequired: true
-  };
+  apikey  : '<YOUR API KEY HERE>',
+  filetype: 'png',
+  verbose : true
+}
 
 // Image file to upload
-const imageFilePath = "imageFile.jpg";
+const imageFilePath = `${__dirname}/loveText.jpg`
 
 // Run and wait the result
-ocrSpaceApi.parseImageFromLocalFile(imageFilePath, options)
-  .then(function (parsedResult) {
-    console.log('parsedText: \n', parsedResult.parsedText);
-    console.log('ocrParsedResult: \n', parsedResult.ocrParsedResult);
-  }).catch(function (err) {
-    console.log('ERROR:', err);
-  });
+const getText = async () => {
+  try {
+    let result = await ocrSpaceApi(imageFilePath, options)
+    
+    console.log({ result })
+  } catch (error) {
+    console.error(error)
+  }
+}
 
+getText()
 ```
 
 ### Options
 
+##### Verbose
+  `Default = false`. Allows you to get a full response from the server, or just the text from the image if it was possible to get it.
+
+##### Filetype
+  * `pdf`
+  * `gif`
+  * `png`
+  * `jpg`
+  * `tif`
+  * `bmp`
+
 ##### Language
-  * Portuguese = `por`
   * English = `eng`
+  * Portuguese = `por`
   * German = `ger`
   * Italian = `ita`
+  * Spanish = `spa`
   * and mode details go to: https://ocr.space/ocrapi#PostParameters
 
-##### isOverlayRequired
 
-`Default = False`
-Allows you to specify if the image/pdf text overlay is required. Overlay could be used to show the text over the image
+## Authors
 
-
+- **Denis** - _Initial Work_ - _Initial Documentation_ - [dennnisk](https://github.com/dennnisk).
+- **Anthony Luzquiños** - _Rework_ - [AnthonyLzq](https://github.com/AnthonyLzq).
