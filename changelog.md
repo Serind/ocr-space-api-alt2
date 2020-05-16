@@ -13,3 +13,8 @@
 
 - Fixed:
   - [`Documentation`](./README.md).
+
+## Version 1.0.0b
+
+- Fixed:
+  - [`Documentation`](./README.md).

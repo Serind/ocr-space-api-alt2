@@ -10,7 +10,7 @@ The OCR is provided by [OCR.SPACE](https://ocr.space/). I don't have anything wi
 
 ## Main changes
 
-1. The original library was using [request](https://github.com/request/request#readme), but since it is deprecated, I show the necessity to migrate. Now I'm currently using [axios](https://github.com/axios/axios#readme) to perform the request.
+1. The original library was using [request](https://github.com/request/request#readme), but since it's deprecated, I saw the necessity to migrate from it. Now I'm currently using [axios](https://github.com/axios/axios#readme) to perform the request.
 
 2. Since [axios](https://github.com/axios/axios#readme) doesn't support `form data` request, I've used [query-string](https://github.com/sindresorhus/query-string#readme).
 
@@ -18,7 +18,7 @@ The OCR is provided by [OCR.SPACE](https://ocr.space/). I don't have anything wi
 
 ### First - Register and Get your API key
 
-Get you API key at https://ocr.space/ocrapi (Direct link : http://eepurl.com/bOLOcf). Just, follow their steps.
+Get you API key at this [link](https://ocr.space/ocrapi) (Direct link : http://eepurl.com/bOLOcf). Just, follow their steps.
 
 ### Second - Install npm package
 
@@ -26,9 +26,9 @@ Get you API key at https://ocr.space/ocrapi (Direct link : http://eepurl.com/bOL
   npm i ocr-space-api-alt2
 ```
 
-<!-- ```console
-  yarn add ocr-space-api2
-``` -->
+```console
+  yarn add ocr-space-api-alt2
+```
 
 ## Usage example
 
