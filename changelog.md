@@ -8,3 +8,8 @@
   - [`query-string`](https://github.com/sindresorhus/query-string#readme), to send `form data`.
   - `Async - await` support.
   - `verbose` option to establish if you want to get a full response or not.
+
+## Version 1.0.0a
+
+- Fixed:
+  - [`Documentation`](./README.md).

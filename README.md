@@ -1,4 +1,4 @@
-# ocr-space-api2
+# ocr-space-api-alt2
 
 Allow to access [ORC.SPACE API](https://ocr.space/ocrapi) to send images and get the embedded text.
 
@@ -22,10 +22,9 @@ Get you API key at https://ocr.space/ocrapi (Direct link : http://eepurl.com/bOL
 
 ### Second - Install npm package
 
-**Pending to publish in [`npm`](https://www.npmjs.com/)**.
-<!-- ```console
-  npm i ocr-space-api2
-``` -->
+```console
+  npm i ocr-space-api-alt2
+```
 
 <!-- ```console
   yarn add ocr-space-api2
@@ -36,7 +35,7 @@ Get you API key at https://ocr.space/ocrapi (Direct link : http://eepurl.com/bOL
 You can see and example at the folder [`example`](/example/example.js).
 
 ```javascript
-const ocrSpaceApi2 = require('ocr-space-api2')
+const ocrSpaceApi2 = require('ocr-space-api-alt2')
 
 var options =  { 
   apikey  : '<YOUR API KEY HERE>',
@@ -87,3 +86,7 @@ getText()
 
 - **Denis** - _Initial Work_ - _Initial Documentation_ - [dennnisk](https://github.com/dennnisk).
 - **Anthony Luzquiños** - _Rework_ - [AnthonyLzq](https://github.com/AnthonyLzq).
+
+**Important**
+
+This package was not fully tested, and every contribution will be appreciated.
