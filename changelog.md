@@ -12,9 +12,20 @@
 ## Version 1.0.0a
 
 - Fixed:
-  - [`Documentation`](./README.md).
+  - [`Documentation`](https://github.com/AnthonyLzq/ocr-space-api-alt2/blob/master/README.md).
 
 ## Version 1.0.0b
 
 - Fixed:
-  - [`Documentation`](./README.md).
+  - [`Documentation`](https://github.com/AnthonyLzq/ocr-space-api-alt2/blob/master/README.md).
+
+## Version 1.0.0b
+
+- Fixed:
+  - [`Documentation`](https://github.com/AnthonyLzq/ocr-space-api-alt2/blob/master/README.md).
+
+## Version 1.0.0c
+
+- Fixed:
+  - [`Documentation`](https://github.com/AnthonyLzq/ocr-space-api-alt2/blob/master/README.md).
+  - `Changelog.md`.
